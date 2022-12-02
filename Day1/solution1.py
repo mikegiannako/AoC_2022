@@ -1,14 +1,13 @@
 from tools.parsing import *
 
 def parse_input():
-    with(open("Day1/input1.txt", "r")) as f:
-        # Parses the input into a 2D list of strings
-        data : list[list[str]] = rdbrd(sep = '\n', linesep = '\n\n')
+    # Parses the input into a 2D list of strings
+    data : list[list[str]] = rdbrd(sep = '\n', linesep = '\n\n')
 
-        # Converts the data to integers
-        int_data : list[list[int]] = totype(data, int)
+    # Converts the data to integers
+    int_data : list[list[int]] = totype(data, int)
 
-        return int_data
+    return int_data
 
 def part1():
     # One line solution
@@ -36,6 +35,6 @@ def part2():
     num_list.sort(reverse = True)
     return sum(num_list[:3])
 
-if __name__ == "__main__":
+def main():
     print(part1())
     print(part2())
