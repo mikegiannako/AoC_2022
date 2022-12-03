@@ -2,19 +2,19 @@ from tools.parsing import *
 
 # Saving the position of each option in a dictionary so we
 # don't have to find it via "index" called on a list every time
-index = {'X': 0, 'Y': 1, 'Z': 2, 'A' : 0, 'B' : 1, 'C' : 2}
+index : dict = {'X': 0, 'Y': 1, 'Z': 2, 'A' : 0, 'B' : 1, 'C' : 2}
 
 # For each of our answers we pair the according score
-value = {'X': 1, 'Y': 2, 'Z': 3}
+value : dict = {'X': 1, 'Y': 2, 'Z': 3}
 
 # Loading the data, converting to string even if it's already a string
 # So the 'totype' function eliminates empty strings/lists
-data = totype(rdbrd(sep = ' ', linesep = '\n'), str)
+data : list[list[chr]] = totype(rdbrd(sep = ' ', linesep = '\n'), str)
 
-def part1():
+def part1() -> int:
     # This function calculates the score of a "game" of RPS
     # based on the index of each answer
-    def calc_score(elf, player):
+    def calc_score(elf : chr, player : chr) -> int:
 
         # These are all the possible combinations of the 
         # subtraction between two indexes
@@ -26,7 +26,7 @@ def part1():
         # If the result is 0, it means we have a Draw (3 points)
         # If the result is 1 or -2, it means the player won (6 points)
         # If the result is -1 or 2, it means the elf won (0 points)
-        points = {-2 : 6, -1 : 0, 0 : 3, 1 : 6, 2 : 0}
+        points : dict = {-2 : 6, -1 : 0, 0 : 3, 1 : 6, 2 : 0}
 
         return points[index[player] - index[elf]]
 
@@ -34,7 +34,7 @@ def part1():
     # One line: return sum([calc_score(game[0], game[1]) + value[game[1]] for game in data])
 
     # Final sum
-    count = 0
+    count : int = 0
 
     # For each game
     for game in data:
@@ -43,12 +43,12 @@ def part1():
 
     return count
 
-def part2():
+def part2() -> int:
     # This time, 'X' means we have to lose, 'Y' means we have to draw
     # and 'Z' means we have to win
-    score = {'X': 0, 'Y': 3, 'Z': 6}
-    offset = {'X': -1, 'Y': 0, 'Z': 1}
-    to_symbol = ['X', 'Y', 'Z']
+    score : dict = {'X': 0, 'Y': 3, 'Z': 6}
+    offset : dict = {'X': -1, 'Y': 0, 'Z': 1}
+    to_symbol : dict = ['X', 'Y', 'Z']
 
     # If we again take a look at the two "arrays":
     #
@@ -62,7 +62,7 @@ def part2():
 
     # This function calculates the score of a "game" of RPS
     # based on the index of each answer
-    def calc_score(elf, player):
+    def calc_score(elf : chr, player : chr) -> int:
 
         # Here the calculation is a bit different and looks complex but is 
         # actually quite simple. 
@@ -83,7 +83,7 @@ def part2():
     # One line: return sum([calc_score(game[0], game[1]) + score[game[1]] for game in data])
 
     # Final sum
-    count = 0
+    count : int = 0
 
     # For each game
     for game in data:

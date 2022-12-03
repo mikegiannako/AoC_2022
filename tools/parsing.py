@@ -13,19 +13,19 @@ day_today : int = int(date.today().strftime("%d").lstrip("0"))
 def rdln(sep : str = '\n') -> list[str]:
     with open(f"Day{day_today}/input{day_today}.txt", 'r') as f:
         data = f.read()
-    return [x for x in data.split(sep)]
+    return [x for x in data.split(sep) if x != '']
 
 # Function to read data that represent a 2D array / 'board'
 def rdbrd(sep : str = ' ', linesep : str = '\n') -> list[list[str]]:
     with open(f"Day{day_today}/input{day_today}.txt", 'r') as f:
         data : str = f.read()
-    return [x.split(sep) for x in data.split(linesep)]
+    return [x.split(sep) for x in data.split(linesep) if x != '']
 
 # Function to read data that represent a 3D array
 def rd3d(sep : str = ',', linesep : str = '\n', chunksep : str = '\n\n') -> list[list[list[str]]]:
     with open(f"Day{day_today}/input{day_today}.txt", 'r') as f:
         data : str = f.read()
-    return [[y.split(sep) for y in x.split(linesep)] for x in data.split(chunksep)]
+    return [[y.split(sep) for y in x.split(linesep) if y != ''] for x in data.split(chunksep)]
 
 # Function that converts the data of a list to the specified type
 # default is integers. This function is called recursively in case
