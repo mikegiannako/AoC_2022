@@ -1,4 +1,4 @@
-from parsing import *
+from tools.parsing import *
 import string 
 
 # This is a string containing all lowercase and uppercase letters in order
