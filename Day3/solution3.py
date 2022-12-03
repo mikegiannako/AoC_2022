@@ -34,9 +34,9 @@ def part1():
         #
         # Finally, because we know we are only gonna have 1 character in the intersection, we can
         # use the pop() method to get the character from the set and assign it to the variable
-        char = (set(compartment[0]) & set(compartment[1])).pop()
+        char : chr = (set(compartment[0]) & set(compartment[1])).pop()
 
-        count +=  letters.index(char[0]) + 1
+        count +=  letters.index(char) + 1
 
     # The sum of all indexes is the result
     return count
@@ -68,9 +68,9 @@ def part2():
     # method as in part 1, but instead of using 2 compartments, we will use 3 groups
     for group in groups:
         # We convert the group into a set and find the intersection of the 3 sets
-        char = (set(group[0]) & set(group[1]) & set(group[2])).pop()
+        char : chr = (set(group[0]) & set(group[1]) & set(group[2])).pop()
 
-        count +=  letters.index(char[0]) + 1
+        count +=  letters.index(char) + 1
 
     return count
 
