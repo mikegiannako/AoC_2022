@@ -1,6 +1,8 @@
 from tools.parsing import *
 import string 
 
+# Problem link: https://adventofcode.com/2022/day/3
+
 # This is a string containing all lowercase and uppercase letters in order
 letters : str = string.ascii_lowercase + string.ascii_uppercase
 

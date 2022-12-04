@@ -1,5 +1,7 @@
 from tools.parsing import *
 
+# Problem link: https://adventofcode.com/2022/day/1
+
 data : list[list[int]] = totype(rdbrd(sep = '\n', linesep = '\n\n'), int)
 
 def part1():

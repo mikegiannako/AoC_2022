@@ -1,10 +1,12 @@
 from tools.parsing import *
 
+# Problem link: https://adventofcode.com/2022/day/4
+
 # The input is of the following format:
 #
 # 1-3, 5-7
 # 2-4, 4-8
-# 3-5, 7-9 etc.
+# 3-5, 7-9
 #
 # So the last (inner) split is on the '-', and the first (outer) split is on the ','
 # Last split to change lines in on '\n', so we have a 3d array (list of pairs of pairs)
@@ -79,7 +81,7 @@ def part1():
     return count
 
 def part2():
-    count = 0
+    count : int = 0
 
     # For the second part, we want to find all the pairs that overlap even by a single point with each other
     # Following the same mindset as in function 'contained', we can check if one line is completely to the left

@@ -1,5 +1,7 @@
 from tools.parsing import *
 
+# Problem link: https://adventofcode.com/2022/day/2
+
 # Saving the position of each option in a dictionary so we
 # don't have to find it via "index" called on a list every time
 index : dict = {'X': 0, 'Y': 1, 'Z': 2, 'A' : 0, 'B' : 1, 'C' : 2}
